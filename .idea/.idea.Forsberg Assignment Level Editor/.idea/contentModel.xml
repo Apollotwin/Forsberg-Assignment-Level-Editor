@@ -7,7 +7,9 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="GridSlot.cs" t="Include" />
+          <e p="Grid.cs" t="Include" />
+          <e p="GridTile.cs" t="Include" />
+          <e p="LevelEditor.cs" t="Include" />
         </e>
       </e>
       <e p="Forsberg Assignment Level Editor.sln" t="IncludeFlat" />
