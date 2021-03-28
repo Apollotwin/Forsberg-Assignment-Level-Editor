@@ -21,6 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/GridEditorScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Grid.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -28,8 +29,9 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/GridSlot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/GridEditorScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
       </list>
     </option>
   </component>
@@ -56,10 +58,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8240">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8240" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -79,6 +81,7 @@
       <workItem from="1616400615728" duration="2468000" />
       <workItem from="1616657060787" duration="4333000" />
       <workItem from="1616839642478" duration="5490000" />
+      <workItem from="1616922712673" duration="2131000" />
     </task>
     <servers />
   </component>

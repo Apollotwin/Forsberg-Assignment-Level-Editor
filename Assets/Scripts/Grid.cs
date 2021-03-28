@@ -7,11 +7,8 @@ public class Grid : MonoBehaviour
     public int height;
     private int[,] gridArray;
 
-    public Grid(int width, int height)
+    public void PopulateGrid()
     {
-        this.width = width;
-        this.height = height;
-        
         gridArray = new int[width,height];
 
         for (int x = 0; x < gridArray.GetLength(0); x++) 
@@ -20,6 +17,16 @@ public class Grid : MonoBehaviour
             {
                 Instantiate(gridTilePrefab, transform);
             }   
+        }
+    }
+
+    public void ClearGrid()
+    {
+        var allTiles = FindObjectsOfType<GridTile>();
+
+        foreach (var gridTile in allTiles)
+        {
+            Destroy(gridTile.gameObject);
         }
     }
     
