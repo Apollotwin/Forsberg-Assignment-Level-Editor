@@ -28,9 +28,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/GridSlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GridTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Editor/GridEditorScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
       </list>
     </option>
@@ -81,7 +81,7 @@
       <workItem from="1616400615728" duration="2468000" />
       <workItem from="1616657060787" duration="4333000" />
       <workItem from="1616839642478" duration="5490000" />
-      <workItem from="1616922712673" duration="2131000" />
+      <workItem from="1616922712673" duration="11074000" />
     </task>
     <servers />
   </component>

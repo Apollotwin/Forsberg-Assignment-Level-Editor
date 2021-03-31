@@ -9,13 +9,9 @@ public class GridTile : MonoBehaviour
     public enum GridTileType { empty, grass, water }
     public GridTileType type;
 
-    private void Start()
+    public GridTile(GridTileType type)
     {
-        gridMat = FindObjectOfType<MeshRenderer>().material;
-    }
-
-    private void Update()
-    {
+        this.type = type;
         if (type == GridTileType.empty)
         {
             gridMat.color = Color.gray;
@@ -29,4 +25,11 @@ public class GridTile : MonoBehaviour
             gridMat.color = Color.blue;
         }
     }
+
+    private void Start()
+    {
+        gridMat = FindObjectOfType<MeshRenderer>().material;
+    }
+
+    
 }
