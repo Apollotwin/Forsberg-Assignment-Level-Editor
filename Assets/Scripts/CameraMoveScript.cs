@@ -11,9 +11,10 @@ public class CameraMoveScript : MonoBehaviour
     private float inputLagPeriod;
     private float inputLagTimer = 0.005f;
     private float maxVerticleAngleFromHorizon = 90;
+    private float moveSpeed = 250;
     private bool cameraControlToggle = true;
-
-    
+    private Vector3 position;
+    public GameObject buildPanel;
 
     void Update()
     {
@@ -24,15 +25,41 @@ public class CameraMoveScript : MonoBehaviour
                 Mathf.MoveTowards(velocity.x, wantedVelocity.x, acceleration.x * Time.deltaTime),
                 Mathf.MoveTowards(velocity.y, wantedVelocity.y, acceleration.y * Time.deltaTime));
             rotation += velocity * Time.deltaTime;
-            rotation.y = ClampVerticleAngle(rotation.y);
+            rotation.y = ClampVerticalAngle(rotation.y);
             transform.localEulerAngles = new Vector3(rotation.y,rotation.x,0);
-        }                       
-        
+            
 
-        if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position += transform.forward * (moveSpeed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.position += -transform.forward * (moveSpeed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += transform.right * (moveSpeed * Time.deltaTime); 
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.position += -transform.right * (moveSpeed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                transform.position += transform.up * (moveSpeed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                transform.position += -transform.up * (moveSpeed * Time.deltaTime);
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.B))
         {
             cameraControlToggle = !cameraControlToggle;
         }
+
+        buildPanel.SetActive(!cameraControlToggle);
     }
 
     private Vector2 GetInput()
@@ -47,7 +74,7 @@ public class CameraMoveScript : MonoBehaviour
         return lastInputEvent;
     }
 
-    private float ClampVerticleAngle(float angle)
+    private float ClampVerticalAngle(float angle)
     {
         return Mathf.Clamp(angle, -maxVerticleAngleFromHorizon, maxVerticleAngleFromHorizon);
     }
@@ -58,14 +85,14 @@ public class CameraMoveScript : MonoBehaviour
         inputLagTimer = 0;
         lastInputEvent = Vector2.zero;
 
-        Vector3 euler = transform.localEulerAngles;
+        Vector3 euler = transform.eulerAngles;
 
         if (euler.x >= 180)
         {
             euler.x -= 360;
         }
-        euler.x = ClampVerticleAngle(euler.x);
-        transform.localEulerAngles = euler;
+        euler.x = ClampVerticalAngle(euler.x);
+        transform.eulerAngles = euler;
         rotation = new Vector2(euler.y,euler.x);
     }
 }
