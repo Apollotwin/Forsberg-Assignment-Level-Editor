@@ -11,9 +11,11 @@
           <e p="GridEditorScript.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="CameraMoveScript.cs" t="Include" />
           <e p="Grid.cs" t="Include" />
           <e p="GridTile.cs" t="Include" />
           <e p="LevelEditor.cs" t="Include" />
+          <e p="SelectionManager.cs" t="Include" />
         </e>
       </e>
       <e p="Forsberg Assignment Level Editor.sln" t="IncludeFlat" />

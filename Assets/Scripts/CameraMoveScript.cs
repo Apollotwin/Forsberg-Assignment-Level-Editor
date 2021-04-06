@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
+using Image = UnityEngine.UI.Image;
 
 public class CameraMoveScript : MonoBehaviour
 {
@@ -14,6 +18,7 @@ public class CameraMoveScript : MonoBehaviour
     private bool cameraControlToggle = true;
     private Vector3 position;
     public GameObject buildPanel;
+    private Image crossHair;
 
     public float MoveSpeed
     {
@@ -25,6 +30,12 @@ public class CameraMoveScript : MonoBehaviour
             }
             return moveSpeed;
         }
+    }
+
+    private void Start()
+    {
+        crossHair = GetComponentInChildren<Image>();
+        Cursor.visible = false;
     }
 
     void Update()
@@ -69,7 +80,18 @@ public class CameraMoveScript : MonoBehaviour
         {
             cameraControlToggle = !cameraControlToggle;
         }
+
+        Cursor.visible = !cameraControlToggle;
         buildPanel.SetActive(!cameraControlToggle);
+        crossHair.gameObject.SetActive(cameraControlToggle);
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+        }
+        
     }
 
     private Vector2 GetInput()

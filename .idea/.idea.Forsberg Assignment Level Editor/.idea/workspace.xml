@@ -32,6 +32,7 @@
         <option value="$PROJECT_DIR$/Assets/Editor/GridEditorScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraMoveScript.cs" />
       </list>
     </option>
   </component>
@@ -82,6 +83,7 @@
       <workItem from="1616657060787" duration="4333000" />
       <workItem from="1616839642478" duration="5490000" />
       <workItem from="1616922712673" duration="11074000" />
+      <workItem from="1617718052594" duration="1285000" />
     </task>
     <servers />
   </component>
@@ -170,9 +172,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2038" height="244" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1616845199782" />
-    <state x="736" y="437" width="672" height="678" key="search.everywhere.popup" timestamp="1616842964014">
+    <state x="736" y="437" width="672" height="678" key="search.everywhere.popup" timestamp="1617718389199">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="736" y="437" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1616842964014" />
+    <state x="736" y="437" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1617718389199" />
   </component>
 </project>
