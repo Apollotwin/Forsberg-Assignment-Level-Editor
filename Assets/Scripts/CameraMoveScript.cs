@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraMoveScript : MonoBehaviour
 {
@@ -11,10 +10,22 @@ public class CameraMoveScript : MonoBehaviour
     private float inputLagPeriod;
     private float inputLagTimer = 0.005f;
     private float maxVerticleAngleFromHorizon = 90;
-    private float moveSpeed = 250;
+    public float moveSpeed = 200;
     private bool cameraControlToggle = true;
     private Vector3 position;
     public GameObject buildPanel;
+
+    public float MoveSpeed
+    {
+        get
+        {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                return moveSpeed * 10;
+            }
+            return moveSpeed;
+        }
+    }
 
     void Update()
     {
@@ -31,34 +42,33 @@ public class CameraMoveScript : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W))
             {
-                transform.position += transform.forward * (moveSpeed * Time.deltaTime);
+                transform.position += transform.forward * (MoveSpeed * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                transform.position += -transform.forward * (moveSpeed * Time.deltaTime);
+                transform.position += -transform.forward * (MoveSpeed * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                transform.position += transform.right * (moveSpeed * Time.deltaTime); 
+                transform.position += transform.right * (MoveSpeed * Time.deltaTime); 
             }
             if (Input.GetKey(KeyCode.A))
             {
-                transform.position += -transform.right * (moveSpeed * Time.deltaTime);
+                transform.position += -transform.right * (MoveSpeed * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.Space))
             {
-                transform.position += transform.up * (moveSpeed * Time.deltaTime);
+                transform.position += transform.up * (MoveSpeed * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.LeftControl))
             {
-                transform.position += -transform.up * (moveSpeed * Time.deltaTime);
+                transform.position += -transform.up * (MoveSpeed * Time.deltaTime);
             }
         }
         if (Input.GetKeyUp(KeyCode.B))
         {
             cameraControlToggle = !cameraControlToggle;
         }
-
         buildPanel.SetActive(!cameraControlToggle);
     }
 

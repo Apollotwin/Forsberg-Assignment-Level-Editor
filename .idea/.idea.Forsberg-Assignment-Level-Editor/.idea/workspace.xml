@@ -10,10 +10,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SelectionManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMoveScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SelectionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridTile.cs" />
       </list>
     </option>
   </component>
@@ -56,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617376352720</updated>
-      <workItem from="1617376365988" duration="7242000" />
+      <workItem from="1617376365988" duration="10399000" />
     </task>
     <servers />
   </component>
@@ -67,5 +73,11 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="386" y="153" width="672" height="678" key="search.everywhere.popup" timestamp="1617577432748">
+      <screen x="0" y="23" width="1440" height="809" />
+    </state>
+    <state x="386" y="153" width="672" height="678" key="search.everywhere.popup/0.23.1440.809@0.23.1440.809" timestamp="1617577432748" />
   </component>
 </project>
