@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 using Image = UnityEngine.UI.Image;
@@ -12,13 +13,17 @@ public class CameraMoveScript : MonoBehaviour
     private Vector2 rotation;
     private Vector2 lastInputEvent;
     private float inputLagPeriod;
-    private float inputLagTimer = 0.005f;
+    private float inputLagTimer = 0.00005f;
     private float maxVerticleAngleFromHorizon = 90;
     public float moveSpeed = 200;
     private bool cameraControlToggle = true;
+    private bool optionMenuToggle;
     private Vector3 position;
     public GameObject buildPanel;
+    public GameObject optionMenu;
     private Image crossHair;
+    public Text moveSpeedText;
+    public Text mouseSensetivePlaceholderText;
 
     public float MoveSpeed
     {
@@ -40,15 +45,18 @@ public class CameraMoveScript : MonoBehaviour
 
     void Update()
     {
-        if (cameraControlToggle)
+        if (cameraControlToggle && !optionMenuToggle)
         {
-            Vector2 wantedVelocity = GetInput() * mouseSensitivity;
+            var wantedVelocity = GetInput() * mouseSensitivity;
             velocity = new Vector2(
                 Mathf.MoveTowards(velocity.x, wantedVelocity.x, acceleration.x * Time.deltaTime),
                 Mathf.MoveTowards(velocity.y, wantedVelocity.y, acceleration.y * Time.deltaTime));
             rotation += velocity * Time.deltaTime;
             rotation.y = ClampVerticalAngle(rotation.y);
             transform.localEulerAngles = new Vector3(rotation.y,rotation.x,0);
+
+            moveSpeedText.text = moveSpeed.ToString();
+            mouseSensetivePlaceholderText.text = mouseSensitivity.x.ToString();
             
 
             if (Input.GetKey(KeyCode.W))
@@ -80,18 +88,16 @@ public class CameraMoveScript : MonoBehaviour
         {
             cameraControlToggle = !cameraControlToggle;
         }
-
-        Cursor.visible = !cameraControlToggle;
-        buildPanel.SetActive(!cameraControlToggle);
-        crossHair.gameObject.SetActive(cameraControlToggle);
-
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #endif
+            optionMenuToggle = !optionMenuToggle;
         }
         
+        Cursor.visible = !cameraControlToggle || optionMenuToggle;
+        Cursor.lockState = !Cursor.visible ? CursorLockMode.Locked : CursorLockMode.None;
+        buildPanel.SetActive(!cameraControlToggle);
+        crossHair.gameObject.SetActive(!Cursor.visible);
+        optionMenu.SetActive(optionMenuToggle);
     }
 
     private Vector2 GetInput()
@@ -126,5 +132,12 @@ public class CameraMoveScript : MonoBehaviour
         euler.x = ClampVerticalAngle(euler.x);
         transform.eulerAngles = euler;
         rotation = new Vector2(euler.y,euler.x);
+    }
+
+    public void Quit()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
