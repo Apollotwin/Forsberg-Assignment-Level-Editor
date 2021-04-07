@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridTile: {fileID: 8466605208504583714}
   type: 0
+  isHighlighted: 0
 --- !u!1 &8466605208504583714
 GameObject:
   m_ObjectHideFlags: 0

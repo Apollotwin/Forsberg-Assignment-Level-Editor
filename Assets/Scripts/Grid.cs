@@ -7,14 +7,23 @@ public class Grid : MonoBehaviour
     public GameObject gridTilePrefab;
     public InputField widthInput;
     public InputField heightInput;
+    public InputField tileWidthInput;
+    public InputField tileHeightInput;
     private int width;
     private int height;
+    private float tileWidth;
+    private float tileHeight;
     private int[,] gridArray;
     private List<GameObject> gridTileToSave;
     
 
     public void PopulateGrid()
     {
+        tileWidth =  float.Parse(tileWidthInput.text);
+        tileHeight = float.Parse(tileHeightInput.text);
+
+        Debug.Log("Width: " + tileWidth + " Height: " + tileHeight);
+
         width = int.Parse(widthInput.text);
         height = int.Parse(heightInput.text);
 
@@ -24,10 +33,10 @@ public class Grid : MonoBehaviour
         {
             for (int y = 0; y < gridArray.GetLength(1); y++)
             {
-                Debug.Log(x + "," + y);
                 var gridTile = Instantiate(gridTilePrefab, transform);
                 gridTile.gameObject.name = $"GridTile {x}.{y}";
-                gridTile.transform.position = new Vector3(x * 10, 0, y * 10);
+                gridTile.gameObject.transform.localScale = new Vector3(tileWidth / 10, 1, tileHeight / 10);
+                gridTile.transform.position = new Vector3(x * tileWidth, 0, y * tileHeight);
                 gridTile.GetComponent<GridTile>().type = GridTile.GridTileType.empty;
             }   
         }

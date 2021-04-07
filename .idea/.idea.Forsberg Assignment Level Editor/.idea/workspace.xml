@@ -31,8 +31,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Editor/GridEditorScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMoveScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
       </list>
     </option>
   </component>
