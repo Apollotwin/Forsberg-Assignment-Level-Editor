@@ -21,6 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Selecter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/GridEditorScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Grid.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -30,8 +31,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GridSlot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Editor/GridEditorScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GridTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMoveScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Selecter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Grid.cs" />
       </list>
     </option>
@@ -84,6 +86,8 @@
       <workItem from="1616839642478" duration="5490000" />
       <workItem from="1616922712673" duration="11074000" />
       <workItem from="1617718052594" duration="2091000" />
+      <workItem from="1617815138385" duration="383000" />
+      <workItem from="1617874651630" duration="19262000" />
     </task>
     <servers />
   </component>

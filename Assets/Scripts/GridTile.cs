@@ -1,50 +1,28 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [Serializable]
 public class GridTile : MonoBehaviour
 {
-    public GameObject gridTile;
-    private Material gridMat;
-    public enum GridTileType { empty, grass, water, selected }
-    public GridTileType type;
-    public bool isHighlighted = false;
+    public Material[] tileMaterials;
+    private MeshRenderer gridMat;
+    private int matIndex;
 
-    public GridTile(GridTileType type)
+    public int MatIndex
     {
-        this.type = type;
-        if (type == GridTileType.empty)
-        {
-            gridMat.color = Color.white;
-        }
-        if(type == GridTileType.grass)
-        {
-            gridMat.color = Color.green;
-        }
-        if(type == GridTileType.water)
-        {
-            gridMat.color = Color.blue;
-        }
-        if (type == GridTileType.selected)
-        {
-            gridMat.color = Color.yellow;
-        }
+        get => matIndex;
+        set => matIndex = value;
     }
 
-    private void Start()
+    private void Awake()
     {
-        gridMat = FindObjectOfType<MeshRenderer>().material;
+        gridMat = GetComponent<MeshRenderer>();
     }
 
-    private void Update()
+    public void ChangeMaterial(int index)
     {
-        if (isHighlighted)
-        {
-            type = GridTileType.selected;
-        }
-        else
-        {
-            type = GridTileType.empty;
-        }
+        MatIndex = index;
+        gridMat.material = tileMaterials[index];
     }
 }
