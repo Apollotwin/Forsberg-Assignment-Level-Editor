@@ -15,7 +15,10 @@
           <e p="Grid.cs" t="Include" />
           <e p="GridTile.cs" t="Include" />
           <e p="LevelEditor.cs" t="Include" />
+          <e p="MouseLook.cs" t="Include" />
           <e p="Selecter.cs" t="Include" />
+          <e p="StateManager.cs" t="Include" />
+          <e p="UIController.cs" t="Include" />
         </e>
       </e>
       <e p="Forsberg Assignment Level Editor.sln" t="IncludeFlat" />

@@ -25,6 +25,7 @@ public class Grid : MonoBehaviour
         width = int.Parse(widthInput.text);
         height = int.Parse(heightInput.text);
         
+        ClearGrid();
         GenerateGrid();
     }
 
