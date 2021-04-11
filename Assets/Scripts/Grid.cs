@@ -48,7 +48,7 @@ public class Grid : MonoBehaviour
     public void ClearGrid()
     {
         var allTiles = FindObjectsOfType<GridTile>();
-
+        if(allTiles == null) return;
         foreach (var gridTile in allTiles)
         {
             Destroy(gridTile.gameObject);
